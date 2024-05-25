@@ -19,7 +19,7 @@ function onAddItemSubmit(e) {
 
   //Validate Input
   if (newItem === '') {
-    alert('Please add an item');
+    alert('Por favor, adicione um pruduto');
     return;
   }
 
@@ -33,7 +33,7 @@ function onAddItemSubmit(e) {
     isEditMode = false;
   } else {
     if (checkIfItemExists(newItem)) {
-      alert('That item already exists');
+      alert('Esse item já existe');
       return;
     }
   }
@@ -116,13 +116,13 @@ function setItemToEdit(item) {
     .querySelectorAll('li')
     .forEach((i) => i.classList.remove('edit-mode'));
   item.classList.add('edit-mode');
-  formBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Update Item';
+  formBtn.innerHTML = '<i class="fa-solid fa-pen"></i> Atualizar produto';
   formBtn.style.backgroundColor = '#228b22';
   itemInput.value = item.textContent;
 }
 
 function removeItem(item) {
-  if (confirm('Are you sure?')) {
+  if (confirm('Tem certeza?')) {
     //Remove item from DOM
     item.remove();
     //Remove item from storage
@@ -177,7 +177,7 @@ function checkIU() {
     clearBtn.style.display = 'block';
     itemFilter.style.display = 'block';
   }
-  formBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Add Item';
+  formBtn.innerHTML = '<i class="fa-solid fa-plus"></i> Adicionar produto';
   formBtn.style.backgroundColor = '#333';
 
   isEditMode = false;
